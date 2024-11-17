@@ -87,14 +87,14 @@ The **Contact Manager API** allows users to authenticate and manage their contac
   }
   ```
 - **Responses**:
-  - **201 Created**: If the user is successfully registered.
+  - **201**: If the user is successfully registered.
     ```json
     {
       "token": "jwt_token_here",
       "expiresIn": 3600
     }
     ```
-  - **400 Bad Request**: If the email is already in use.
+  - **422**: If the email is already in use.
     ```json
     {
       "message": "Email is already in use",
@@ -113,14 +113,14 @@ The **Contact Manager API** allows users to authenticate and manage their contac
   }
   ```
 - **Responses**:
-  - **200 OK**: If the login is successful.
+  - **200**: If the login is successful.
     ```json
     {
       "token": "jwt_token_here",
       "expiresIn": 3600
     }
     ```
-  - **401 Unauthorized**: If the email or password is incorrect.
+  - **401**: If the email or password is incorrect.
     ```json
     {
       "message": "Invalid email or password",

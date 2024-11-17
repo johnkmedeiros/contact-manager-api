@@ -68,7 +68,7 @@ describe("RegisterUserUseCase", () => {
             new BusinessException(
                 ErrorCodes.EMAIL_ALREADY_IN_USE.code,
                 ErrorCodes.EMAIL_ALREADY_IN_USE.message,
-                401,
+                422,
             ),
         );
     });
