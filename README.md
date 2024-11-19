@@ -7,7 +7,7 @@ The **Contact Manager API** allows users to authenticate and manage their contac
 - **Node.js** version 18 or higher.
 - **MySQL** for the database (or any compatible database with Prisma).
 
-## Installation
+## Installation 
 
 1. Clone the repository:
    ```bash
@@ -29,7 +29,7 @@ The **Contact Manager API** allows users to authenticate and manage their contac
 
    Example:
    ```
-   DATABASE_URL="mysql://root:@localhost:3306/contact_manager"
+   DATABASE_URL="mysql://root:root@localhost:3306/contact_manager"
    JWT_SECRET="your_jwt_secret"
    JWT_EXPIRATION_TIME="3600"
    ```
@@ -53,10 +53,56 @@ The **Contact Manager API** allows users to authenticate and manage their contac
 
 ## Testing
 
-1. Run the script:
+- Run the script:
    ```bash
    npm run test
    ```
+   
+## Docker Setup
+
+If you prefer to use docker, the project includes a `docker-compose.yml` file that will set up both the API and the MySQL database, run the migrations and start the server, the API will be available at http://localhost:3000.
+
+1. Set up environment variables. Create a `.env` file from the `.env.example` file:
+   ```bash
+   cp .env.example .env
+   ```
+
+   Then, fill in the database connection and JWT secret details. Make sure the database name and MySQL password match the ones in the `docker-compose.yml` file.
+
+   Example:
+   ```
+   DATABASE_URL="mysql://root:root@localhost:3306/contact_manager"
+   JWT_SECRET="your_jwt_secret"
+   JWT_EXPIRATION_TIME="3600"
+   ```
+
+  2. Run the command to build, start the containers and the api server:
+   ```bash
+   docker-compose up --build
+   ```
+
+
+### Docker Commands
+
+- **Build and start the containers**:
+  ```bash
+  docker-compose up --build
+  ```
+
+- **Stop the containers**:
+  ```bash
+  docker-compose down
+  ```
+
+- **View logs**:
+  ```bash
+  docker-compose logs
+  ```
+
+- **Run API tests**
+  ```bash
+  docker-compose exec api npm run test
+  ```
 
 ## API Routes Documentation
 

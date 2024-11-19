@@ -6,9 +6,7 @@
     "test": "jest",
     "start": "node dist/infrastructure/http/server.js",
     "dev": "tsc-watch --onSuccess \"node dist/infrastructure/http/server.js\"",
-    "build": "tsc",
-    "runbuild": "npm run build",
-    "postinstall": "prisma generate && npm run runbuild"
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
